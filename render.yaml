@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: pdf-ai-chat
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: GEMINI_CHAT_MODEL
+        value: gemini-3.6-flash
+      - key: GEMINI_EMBEDDING_MODEL
+        value: models/gemini-embedding-001
+      - key: MAX_ACTIVE_SESSIONS
+        value: "20"
+      - key: MAX_QUESTIONS_PER_SESSION
+        value: "30"

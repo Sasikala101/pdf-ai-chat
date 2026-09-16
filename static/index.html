@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PDF AI — Ask your documents</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="intro">
+        <div class="brand"><span class="brand-mark">P</span> PDF AI</div>
+        <h1>Turn long PDFs into<br /><em>clear answers.</em></h1>
+        <p>Upload a document, ask questions, and get grounded answers with page references.</p>
+        <div class="privacy"><span>◆</span><div><strong>Private by design</strong><br />Your PDF and vector index stay in this server’s memory and disappear when the session ends.</div></div>
+      </section>
+
+      <section class="workspace">
+        <div id="uploadView" class="panel upload-panel">
+          <div class="eyebrow">YOUR DOCUMENT</div>
+          <label id="dropzone" class="dropzone" for="pdfInput">
+            <input id="pdfInput" type="file" accept="application/pdf,.pdf" hidden />
+            <span class="upload-icon">↑</span>
+            <strong>Drop your PDF here</strong>
+            <span>or click to browse · up to 25 MB</span>
+          </label>
+          <button id="uploadButton" class="primary" disabled>Prepare document</button>
+          <p id="uploadStatus" class="status" aria-live="polite"></p>
+        </div>
+
+        <div id="chatView" class="panel chat-panel hidden">
+          <header class="document-bar">
+            <div><span class="file-icon">PDF</span><div><strong id="fileName"></strong><small id="fileMeta"></small></div></div>
+            <button id="newDocument" class="text-button">New document</button>
+          </header>
+          <div id="messages" class="messages">
+            <article class="message assistant"><div class="avatar">AI</div><div><p>Your document is ready. What would you like to know?</p></div></article>
+          </div>
+          <form id="chatForm" class="composer">
+            <textarea id="question" rows="1" maxlength="2000" placeholder="Ask a question about your PDF…" required></textarea>
+            <button id="sendButton" type="submit" aria-label="Send question">↑</button>
+          </form>
+          <p class="disclaimer">Answers are generated only from retrieved PDF excerpts. Verify important details against the cited pages.</p>
+        </div>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

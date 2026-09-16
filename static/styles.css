@@ -1,0 +1,42 @@
+:root {
+  color-scheme: light;
+  --ink: #17211b;
+  --muted: #647069;
+  --paper: #f4f1e9;
+  --card: #fffdf8;
+  --line: #d9ddd5;
+  --green: #185f43;
+  --green-soft: #dcebe1;
+  --accent: #d77842;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: var(--paper); color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif; }
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .2; background-image: radial-gradient(#756f61 0.55px, transparent 0.55px); background-size: 6px 6px; }
+.shell { position: relative; min-height: 100vh; display: grid; grid-template-columns: minmax(300px, .8fr) minmax(480px, 1.2fr); gap: clamp(40px, 7vw, 110px); align-items: center; max-width: 1320px; margin: auto; padding: 48px; }
+.brand { display: flex; align-items: center; gap: 11px; font-size: 14px; font-weight: 800; letter-spacing: .14em; }
+.brand-mark { display: grid; place-items: center; width: 34px; height: 39px; background: var(--green); color: white; border-radius: 4px 4px 11px 4px; font-family: Georgia, serif; font-size: 20px; }
+h1 { margin: 58px 0 24px; max-width: 600px; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(48px, 6vw, 82px); line-height: .98; font-weight: 500; letter-spacing: -.045em; }
+h1 em { color: var(--green); font-weight: 500; }
+.intro > p { max-width: 500px; color: var(--muted); font-size: 18px; line-height: 1.7; }
+.privacy { display: flex; gap: 14px; max-width: 480px; margin-top: 42px; padding-top: 24px; border-top: 1px solid #cfd2c9; color: var(--muted); font-size: 13px; line-height: 1.55; }
+.privacy > span { color: var(--green); }.privacy strong { color: var(--ink); }
+.panel { min-height: 610px; padding: clamp(24px, 4vw, 48px); background: rgba(255,253,248,.94); border: 1px solid rgba(86,96,88,.2); border-radius: 24px; box-shadow: 0 28px 70px rgba(47,59,49,.13); }
+.upload-panel { display: flex; flex-direction: column; justify-content: center; }
+.eyebrow { margin-bottom: 24px; color: var(--green); font-size: 11px; font-weight: 800; letter-spacing: .18em; }
+.dropzone { min-height: 315px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; border: 1.5px dashed #a9b6aa; border-radius: 16px; cursor: pointer; transition: .2s ease; text-align: center; }
+.dropzone:hover, .dropzone.dragging { border-color: var(--green); background: #f1f7f2; transform: translateY(-2px); }
+.dropzone.has-file { border-style: solid; background: var(--green-soft); }
+.upload-icon { display: grid; place-items: center; width: 56px; height: 56px; margin-bottom: 8px; border-radius: 50%; background: var(--green); color: white; font-size: 27px; }
+.dropzone strong { font-family: Georgia, serif; font-size: 23px; }.dropzone span:last-child { color: var(--muted); font-size: 13px; }
+button { font: inherit; }.primary { width: 100%; margin-top: 18px; padding: 15px; border: 0; border-radius: 11px; background: var(--green); color: white; font-weight: 750; cursor: pointer; }
+.primary:disabled { opacity: .42; cursor: default; }.status { min-height: 22px; margin: 13px 0 0; color: var(--muted); font-size: 13px; text-align: center; }.status.error { color: #a6382e; }
+.hidden { display: none !important; }.chat-panel { padding: 0; display: flex; flex-direction: column; overflow: hidden; }
+.document-bar { padding: 21px 25px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; }
+.document-bar > div { display: flex; align-items: center; gap: 12px; min-width: 0; }.document-bar strong { max-width: 330px; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; }.document-bar small { display: block; margin-top: 3px; color: var(--muted); }
+.file-icon { padding: 8px 7px; border-radius: 6px; background: #f0dcd1; color: #9e482c; font-size: 9px; font-weight: 900; }.text-button { border: 0; background: none; color: var(--green); cursor: pointer; font-weight: 700; font-size: 13px; }
+.messages { flex: 1; min-height: 0; padding: 27px; overflow-y: auto; }.message { display: flex; gap: 11px; margin-bottom: 23px; }.message.user { justify-content: flex-end; }.message.user > div { max-width: 78%; padding: 11px 15px; border-radius: 15px 15px 4px 15px; background: var(--green); color: white; }.message.assistant > div:last-child { max-width: 84%; }.message p { margin: 0 0 10px; line-height: 1.6; white-space: pre-wrap; }.message p:last-child { margin-bottom: 0; }.message h3 { margin: 4px 0 9px; font-family: Georgia, serif; font-size: 18px; }.message ul { margin: 8px 0 5px; padding-left: 21px; }.message li { margin: 0 0 9px; padding-left: 3px; line-height: 1.55; }.message li::marker { color: var(--accent); }.message strong { color: #183f30; }.avatar { flex: 0 0 auto; display: grid; place-items: center; width: 31px; height: 31px; border-radius: 50%; background: var(--green-soft); color: var(--green); font-size: 10px; font-weight: 900; }
+.sources { margin-top: 11px; display: flex; flex-wrap: wrap; gap: 6px; }.source { border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px; color: var(--muted); background: white; font-size: 11px; cursor: help; }
+.composer { margin: 0 24px; padding: 7px 7px 7px 15px; display: flex; gap: 8px; align-items: end; border: 1px solid #bac3ba; border-radius: 14px; background: white; }.composer:focus-within { border-color: var(--green); box-shadow: 0 0 0 3px rgba(24,95,67,.1); }.composer textarea { flex: 1; max-height: 120px; padding: 8px 0; resize: none; border: 0; outline: 0; background: transparent; font: inherit; line-height: 1.45; }.composer button { width: 39px; height: 39px; border: 0; border-radius: 10px; background: var(--green); color: white; cursor: pointer; font-size: 20px; }.composer button:disabled { opacity: .4; }
+.disclaimer { margin: 12px 26px 20px; color: #858d87; font-size: 10px; text-align: center; }
+@media (max-width: 900px) { .shell { grid-template-columns: 1fr; padding: 28px 18px; }.intro { padding: 20px 10px 0; } h1 { margin-top: 35px; }.privacy { margin-top: 28px; }.panel { min-height: 560px; } }
